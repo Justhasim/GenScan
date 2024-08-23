@@ -1,6 +1,3 @@
-Certainly! Below is a sample `README.md` for your project. This will help others understand what the project does, how to set it up, and how to use it.
-
----
 
 # GenScan
 
