@@ -77,6 +77,7 @@ function GeneQr() {
           <QRCode
             value={inputValue}
             size={200}
+            qrStyle="dots"
             bgColor={isDarkMode ? "#333333" : "#ffffff"}
             fgColor={isDarkMode ? "#ffffff" : "#000000"}
             eyeRadius={9}
