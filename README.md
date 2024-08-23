@@ -24,7 +24,7 @@ To set up this project locally, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/gen-scan.git
+   git clone https://github.com/justhasim/gen-scan.git
    ```
 
 2. **Navigate to the project directory**:
