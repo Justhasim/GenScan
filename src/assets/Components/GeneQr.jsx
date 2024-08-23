@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 
 function GeneQr() {
   const [inputValue, setInputValue] = useState("");
-  const qrCodeRef = useRef(null); // Ref to the QR code container
+  const qrCodeRef = useRef(null); 
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -48,7 +48,7 @@ function GeneQr() {
             title: "Check out my QR Code",
             text: "Here is a QR Code I generated.",
             files: [
-              new File([imgData], "qrcode.jpg", {
+              new File([imgData], "qrcode.png", {
                 type: "image/png",
               }),
             ],
