@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 
 function GeneQr() {
   const [inputValue, setInputValue] = useState("");
-  const qrCodeRef = useRef(null); 
+  const qrCodeRef = useRef(null); // Ref to the QR code container
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -44,17 +44,22 @@ function GeneQr() {
       if (qrCodeRef.current) {
         html2canvas(qrCodeRef.current).then((canvas) => {
           const imgData = canvas.toDataURL("image/png");
-          navigator.share({
-            title: "Check out my QR Code",
-            text: "Here is a QR Code I generated.",
-            files: [
-              new File([imgData], "qrcode.png", {
-                type: "image/png",
-              }),
-            ],
-          })
-          .then(() => console.log("Share successful"))
-          .catch((error) => console.log("Share failed", error));
+
+          // Convert base64 data URL to Blob
+          fetch(imgData)
+            .then((res) => res.blob())
+            .then((blob) => {
+              const file = new File([blob], "qrcode.png", { type: "image/png" });
+
+              navigator.share({
+                title: "Check out my QR Code",
+                text: "Here is a QR Code I generated.",
+                files: [file],
+              })
+                .then(() => console.log("Share successful"))
+                .catch((error) => console.log("Share failed", error));
+            })
+            .catch((error) => console.log("Error converting image to Blob", error));
         });
       }
     } else {
