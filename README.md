@@ -89,6 +89,4 @@ If you'd like to contribute to this project, please fork the repository and subm
 - [html2canvas](https://html2canvas.hertzen.com/) - Library for capturing screenshots.
 - [html5-qrcode](https://github.com/mebjas/html5-qrcode) - QR code scanning library.
 
----
 
-Feel free to adjust any section to better fit your project or include additional details if necessary!
